@@ -1,0 +1,20 @@
+spring:
+  threads:
+    virtual:
+      enabled: true
+#  mail:
+#    host: smtp.gmail.com
+#    port: 584
+#    test-connection: true
+#    protocol: smtp
+  hateoas:
+    use-hal-as-default-json-media-type: true
+server:
+  port: 9090
+  http2:
+    enabled: true
+springdoc:
+  swagger-ui:
+    display-request-duration: true
+    deep-linking: true
+    try-it-out-enabled: true

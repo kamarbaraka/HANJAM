@@ -10,6 +10,7 @@ plugins {
 group = "org.kamar"
 version = "0.0.1-SNAPSHOT"
 
+
 java {
     sourceCompatibility = JavaVersion.VERSION_21
 }
@@ -46,10 +47,12 @@ dependencies {
     implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-reactor-resilience4j")
     implementation("org.springframework.integration:spring-integration-http")
     implementation("org.springframework.integration:spring-integration-jpa")
-    implementation("org.springframework.integration:spring-integration-mail")
+//    implementation("org.springframework.integration:spring-integration-mail")
     implementation("org.springframework.integration:spring-integration-security")
     implementation("org.springframework.integration:spring-integration-webflux")
     implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity6")
+    // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0")
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     developmentOnly("org.springframework.boot:spring-boot-docker-compose")

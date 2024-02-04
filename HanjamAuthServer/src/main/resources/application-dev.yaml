@@ -1,0 +1,7 @@
+
+#import credentials
+spring:
+  config:
+    import: optional:credentials-dev.yaml
+  datasource:
+    url:

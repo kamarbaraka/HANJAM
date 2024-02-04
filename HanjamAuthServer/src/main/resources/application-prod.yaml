@@ -1,0 +1,5 @@
+
+#import credentials
+spring:
+  config:
+    import: optional:credentials-prod.yaml
