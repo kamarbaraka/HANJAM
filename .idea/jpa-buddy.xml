@@ -5,6 +5,7 @@
     <option name="renamerInitialized" value="true" />
     <option name="sourceModelValue" value="Default" />
     <option name="targetDbValue" value="76764b65-a5a3-452e-8bf1-a1c388d632cf" />
-    <option name="newEntityIdStrategy" value="Identity" />
+    <option name="newEntityIdType" value="UUID" />
+    <option name="newEntityIdStrategy" value="Auto" />
   </component>
 </project>
