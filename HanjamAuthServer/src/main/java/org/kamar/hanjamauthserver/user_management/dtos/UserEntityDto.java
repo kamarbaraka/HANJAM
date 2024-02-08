@@ -33,14 +33,14 @@ public record UserEntityDto(
         @NotBlank(message = "email cannot be blank.")
         String email,
         @NotNull(message = "phone number cannot be null.")
-        @Pattern(message = "value must be a valid phone number.", regexp = "^\\\\+(?:[0-9] ?){6,14}[0-9]$")
+        /*@Pattern(message = "value must be a valid phone number.", regexp = "(?:[0-9] ?){6,14}[0-9]$")*/
         @NotEmpty(message = "phone number cannot be empty.")
         @NotBlank(message = "phone number cannot be blank.")
         String phoneNumber,
         @NotNull(message = "password cannot be null.")
         @Size(message = "password length too short or long.", min = 8, max = 50)
-        @Pattern(message = "password does not meet the required pattern.",
-                regexp = "(?=\\\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\\\\\\\S+$).{8,}")
+        /*@Pattern(message = "password does not meet the required pattern.",
+                regexp = "(?=\\\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\\\\\\\S+$).{8,}")*/
         @NotEmpty(message = "password cannot be empty.")
         @NotBlank(message = "password cannot be null.")
         String password

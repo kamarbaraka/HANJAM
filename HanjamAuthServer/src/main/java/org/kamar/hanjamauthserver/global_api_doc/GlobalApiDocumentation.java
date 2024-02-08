@@ -43,13 +43,13 @@ import org.springframework.web.bind.annotation.RestController;
         tags = {
                 @Tag(name = "User Management." , description = "Apis for ``managing`` users of the system." ),
                 @Tag(name = "Client Management.", description = "Apis for managing client applications.")
-        },
-//        servers = {},
-        security = {
-                @SecurityRequirement(name = "oauth2")
         }
+//        servers = {},
+        /*security = {
+                @SecurityRequirement(name = "oauth2")
+        }*/
 )
-@SecurityScheme(
+/*@SecurityScheme(
         type = SecuritySchemeType.OAUTH2,
         name = "oauth2",
         description = "",
@@ -63,7 +63,7 @@ import org.springframework.web.bind.annotation.RestController;
         ),
         openIdConnectUrl = "",
         ref = ""
-)
+)*/
 
 public class GlobalApiDocumentation {
 }

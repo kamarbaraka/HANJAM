@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -55,7 +56,7 @@ public class UserEntity implements UserDetails {
     @Column(nullable = false)
     private String email;
 
-    @Pattern(message = "value must be a valid phone number.", regexp = "^\\\\+(?:[0-9] ?){6,14}[0-9]$")
+//    @Pattern(message = "value must be a valid phone number.", regexp = "^\\\\+(?:[0-9] ?){6,14}[0-9]$")
     @NotBlank(message = "phone number cannot be blank.")
     @NotEmpty(message = "phone number cannot be empty.")
     @NotNull(message = "phone number cannot be null.")
@@ -63,9 +64,9 @@ public class UserEntity implements UserDetails {
     private String phoneNumber;
 
 
-    @Pattern(message = "password does not meet the required pattern.",
-            regexp = "(?=\\\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\\\\\\\S+$).{8,}")
-    @Size(message = "password length too short or long.", min = 8, max = 50)
+    /*@Pattern(message = "password does not meet the required pattern.",
+            regexp = "(?=\\\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\\\\\\\S+$).{8,}")*/
+//    @Length(message = "password length too short or long.", min = 8, max = 50)
     @NotBlank(message = "password cannot be null.")
     @NotEmpty(message = "password cannot be empty.")
     @NotNull(message = "password cannot be null.")

@@ -1,18 +1,12 @@
 
 @
 build.gradle.kts,d\b\dbcff70658daf80b53ce624f6adcaa529df5ed8d
-M
-HanjamAuthServer/compose.yaml,3\8\38504ff368374eb7bb7715e32dac672a12ededa4
 K
 HanjamAuthServer/Dockerfile,2\4\24c34a1d26c5c742ad494f71ad96e7cd03779145
 Q
 !HanjamAuthServer/build.gradle.kts,c\c\cccbbb190d32aac54ace83d30c55c5b8d0c64b21
 T
 $HanjamAuthServer/settings.gradle.kts,c\1\c149973aab8955f6777a7ca256dd351e6fe5498f
-Œ
-\HanjamAuthServer/src/main/java/org/kamar/hanjamauthserver/user_management/entities/User.java,7\8\78c538c1452b13fe5b63508edec1912f402d621e
-“
-cHanjamAuthServer/src/main/java/org/kamar/hanjamauthserver/user_management/models/UserAuthority.java,4\9\497cecda1ab1e3099381a514098214907776cb13
 ’
 bHanjamAuthServer/src/main/java/org/kamar/hanjamauthserver/user_management/entities/UserEntity.java,3\0\305ea0eca7b22420a5fd62d46064fc58f63bf3f6
  
@@ -43,3 +37,11 @@ dHanjamAuthServer/src/main/java/org/kamar/hanjamauthserver/global_api_doc/Global
 sHanjamAuthServer/src/main/java/org/kamar/hanjamauthserver/global_api_doc/specifications/UserManagementContract.java,b\7\b72479a4b294dbe4375cead5efc0216788691717
 ©
 yHanjamAuthServer/src/main/java/org/kamar/hanjamauthserver/user_management/controllers/UserEntityManagementController.java,7\b\7be4c60c3d6afa0699d8cc540d973d9cd3146df7
+§
+wHanjamAuthServer/src/main/java/org/kamar/hanjamauthserver/global_configuration/DatabaseInitializationConfiguration.java,6\a\6a58ee8952082da2c1192607417674e9ae0f00e3
+®
+~HanjamAuthServer/src/main/java/org/kamar/hanjamauthserver/global_configuration/GlobalConfigurationPropertiesConfiguration.java,2\e\2e617e8ad7009cc15b2eca0dd9c9f7d5e974a98b
+¡
+qHanjamAuthServer/src/main/java/org/kamar/hanjamauthserver/global_configuration_properties/DatabaseProperties.java,6\9\6999f9596e923b0383790e8c9f2f2ebf7845e2fc
+Š
+ZHanjamAuthServer/src/main/java/org/kamar/hanjamauthserver/HanjamAuthServerApplication.java,5\a\5a4db9cb2117875b12ed49e2db9d68666f1a8fc4

@@ -3,5 +3,16 @@
 spring:
   config:
     import: optional:credentials-dev.yaml
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        default_schema: ${app.db.schema}
+  sql:
+    init:
+      mode: always
   datasource:
-    url:
+    url: ${app.db.url}?currentSchema=${app.db.schema}
+    username: ${app.db.user}
+    password: ${app.db.password}

@@ -1,7 +1,6 @@
 package org.kamar.hanjamauthserver.user_management.controllers;
 
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import lombok.RequiredArgsConstructor;
 import org.kamar.hanjamauthserver.global_api_doc.specifications.UserManagementContract;
 import org.kamar.hanjamauthserver.user_management.dtos.UserEntityDto;
@@ -10,6 +9,7 @@ import org.kamar.hanjamauthserver.user_management.models.UserEntityModel;
 import org.kamar.hanjamauthserver.user_management.services.UserEntityManagementService;
 import org.kamar.hanjamauthserver.user_management.services.UserEntityModelAssembler;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -46,12 +46,7 @@ public class UserEntityManagementController implements UserManagementContract {
     @Operation(
                 tags = {"User Management."},
                 summary = "Api to get a user by their username.",
-                description = "",
-                requestBody = @RequestBody(),
-                parameters = {},
-                responses = {},
-                security = {},
-                servers = {}
+                description = ""
     )
     @GetMapping
     public ResponseEntity<UserEntityModel> getUserByUsername(@RequestParam("username") String username) {
@@ -74,15 +69,10 @@ public class UserEntityManagementController implements UserManagementContract {
     @Operation(
                 tags = {"User Management."},
                 summary = "Api to create a user.",
-                description = "",
-                requestBody = @RequestBody(),
-                parameters = {},
-                responses = {},
-                security = {},
-                servers = {}
+                description = ""
     )
     @PostMapping
-    public void createUser(@Validated UserEntityDto userEntityDto) {
+    public void createUser(@Validated @RequestBody UserEntityDto userEntityDto) {
 
         UserEntity userEntity = new UserEntity();
         userEntity.setUsername(userEntityDto.username());
