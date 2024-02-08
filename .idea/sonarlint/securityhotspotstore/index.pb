@@ -53,3 +53,9 @@ pHanjamAuthServer/src/main/java/org/kamar/hanjamauthserver/client_management/ent
 oHanjamAuthServer/src/main/java/org/kamar/hanjamauthserver/client_management/dtos/RegisteredClientEntityDto.java,2\c\2c14bb927068a82c25085a12ee3ccc79f0488ae0
 £
 sHanjamAuthServer/src/main/java/org/kamar/hanjamauthserver/client_management/models/RegisteredClientEntityModel.java,e\d\ed3b13536f5a8f09d28a0bd6dedbcfdb7894f38d
+ß
+wHanjamAuthServer/src/main/java/org/kamar/hanjamauthserver/client_management/services/RegisteredClientEntityService.java,e\c\ec7b3c188c5fac5714eb696541c5f6d18500b18f
+≤
+ÅHanjamAuthServer/src/main/java/org/kamar/hanjamauthserver/client_management/services/RegisteredClientEntityManagementService.java,a\0\a0bf278db05c51a826bae80976477a4d3a6e1917
+Æ
+~HanjamAuthServer/src/main/java/org/kamar/hanjamauthserver/client_management/services/RegisteredClientEntityModelAssembler.java,6\d\6dc08997eb5657cf74d6c666fff3cba0c3785547

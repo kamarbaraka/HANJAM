@@ -31,7 +31,7 @@ import java.util.UUID;
  * @author samson baraka <kamar254baraka@gmail.com>.
  */
 @Repository
-public interface RegisteredClientEntityRepository extends JpaRepository<RegisteredClientEntity, UUID> {
+public interface RegisteredClientEntityRepository extends JpaRepository<RegisteredClientEntity, String > {
 
     /**
      * Finds a RegisteredClientEntity by its clientId.

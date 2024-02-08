@@ -1,5 +1,7 @@
 package org.kamar.hanjamauthserver.client_management.models;
 
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.hateoas.RepresentationModel;
@@ -8,11 +10,12 @@ import org.springframework.hateoas.RepresentationModel;
  * Represents a registered client entity model.
  * Extends RepresentationModel from Spring HATEOAS.
  *
- * @author samson baraka <kamar254baraka@gmail.com>.
+ * @author <a href="https://github.com/kamarbaraka">samson baraka</a>.
  */
 
 @Getter
-@Setter
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 public class RegisteredClientEntityModel extends RepresentationModel<RegisteredClientEntityModel> {
 
     /**

@@ -37,7 +37,7 @@ import org.springframework.web.bind.annotation.RestController;
                 contact = @Contact(
                         name = "samson baraka",
                         email = "kamar254baraka@gmail.com",
-                        url = ""
+                        url = "https://github.com/kamarbaraka"
                 )
         ),
         tags = {

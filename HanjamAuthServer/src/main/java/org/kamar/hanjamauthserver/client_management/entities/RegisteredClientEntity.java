@@ -9,6 +9,7 @@ import lombok.Setter;
 import org.springframework.security.oauth2.core.AuthorizationGrantType;
 import org.springframework.security.oauth2.core.ClientAuthenticationMethod;
 import org.springframework.security.oauth2.jose.jws.SignatureAlgorithm;
+import org.springframework.security.oauth2.server.authorization.client.RegisteredClient;
 import org.springframework.security.oauth2.server.authorization.settings.ClientSettings;
 import org.springframework.security.oauth2.server.authorization.settings.OAuth2TokenFormat;
 import org.springframework.security.oauth2.server.authorization.settings.TokenSettings;
@@ -61,19 +62,16 @@ import java.util.*;
  *     It returns a TokenSettings object with the specified settings.</li>
  * </ul>
  *
- * @author samson baraka <kamar254baraka@gmail.com>.
+ * @author <a href="https://github.com/kamarbaraka">samson baraka</a>.
  */
 @Getter
 @Setter
 @Entity(name = "registered_clients")
 public class RegisteredClientEntity {
-    @Transient
-    private final UUID randomUUID = UUID.randomUUID();
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-    private UUID id;
+    private final String  id = UUID.randomUUID().toString();
 
     @NotBlank(message = "client name cannot be blank.")
     @NotEmpty(message = "client name cannot be empty.")
@@ -85,13 +83,13 @@ public class RegisteredClientEntity {
     @NotEmpty(message = "client ID cannot be empty.")
     @NotNull(message = "client ID cannot be null.")
     @Column(nullable = false, unique = true)
-    private final String clientId = randomUUID.toString();
+    private final String clientId = UUID.randomUUID().toString();
 
     @NotBlank(message = "client secret cannot be blank.")
     @NotEmpty(message = "client secret cannot be empty.")
     @NotNull(message = "client secret cannot be null.")
     @Column(nullable = false)
-    private String clientSecret = randomUUID.toString();
+    private String clientSecret = UUID.randomUUID().toString();
 
     @NotNull(message = "client issued at cannot be null.")
     @Column(nullable = false)
