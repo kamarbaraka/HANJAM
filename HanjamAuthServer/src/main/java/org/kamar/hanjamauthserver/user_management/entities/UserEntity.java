@@ -2,8 +2,7 @@ package org.kamar.hanjamauthserver.user_management.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -20,8 +19,11 @@ import java.util.Set;
  *
  * @author samson baraka <kamar254baraka@gmail.com>.
  */
+@Builder
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "users")
 @Component
 public class UserEntity implements UserDetails {
@@ -78,7 +80,7 @@ public class UserEntity implements UserDetails {
     @JoinTable(name = "users_authorities",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "authority"))
-    private Set<UserAuthority> authorities = new LinkedHashSet<>();
+    private final Set<UserAuthority> authorities = new LinkedHashSet<>();
 
     @NotNull
     @Column(name = "created_on", nullable = false)
@@ -88,16 +90,37 @@ public class UserEntity implements UserDetails {
     @Column(nullable = false)
     private final Instant updatedOn = Instant.now();
 
+
+    @Builder.Default
     private boolean accountPremium = false;
 
+    @Builder.Default
     private boolean accountVerified = false;
 
+    @Builder.Default
     private boolean enabled = false;
 
+    @Builder.Default
     private boolean accountNonLocked = true;
 
+    @Builder.Default
     private boolean accountNonExpired = true;
 
+    @Builder.Default
     private boolean credentialsNonExpired = true;
+
+
+    public static void main(String[] args) {
+
+        UserEntityBuilder builder = new UserEntityBuilder();
+        UserEntity user = builder.username("kamar")
+                .firstname("samson")
+                .lastname("baraka")
+                .phoneNumber("0706354825")
+                .email("me@you.com")
+                .password("me").build();
+
+        System.out.println(user.getUserId()+ " "+ user.getCreatedOn().toString());
+    }
 
 }

@@ -109,11 +109,8 @@ public class RegisteredClientEntity {
     @Column(nullable = false)
     private String postLogoutRedirectUri;
 
-    @NotBlank(message = "scope cannot be blank.")
-    @NotEmpty(message = "scope cannot be empty.")
-    @NotNull(message = "scope cannot be null.")
     @ElementCollection
-    @Column(name = "scope")
+    @Column(name = "scope", nullable = false)
     @CollectionTable(name = "registered_clients_scopes", joinColumns = @JoinColumn(name = "registred_client_id"))
     private final Set<String> scopes = new LinkedHashSet<>();
 

@@ -7,10 +7,12 @@ import org.kamar.hanjamauthserver.client_management.entities.RegisteredClientEnt
 import org.kamar.hanjamauthserver.client_management.models.RegisteredClientEntityModel;
 import org.kamar.hanjamauthserver.client_management.repositories.RegisteredClientEntityRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.server.authorization.OAuth2Authorization;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClient;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClientRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.NoSuchElementException;
 
 
@@ -59,6 +61,21 @@ public class RegisteredClientEntityManagementService implements RegisteredClient
     }
 
     /**
+     * Retrieves a RegisteredClientEntity based on the provided client ID.
+     *
+     * @param clientId The client ID of the registered client to retrieve.
+     * @return The RegisteredClientEntity object representing the registered client.
+     * @throws NoSuchElementException If no registered client is found with the given client ID.
+     */
+    public RegisteredClientEntity getRegisteredClientByClientId(final String clientId){
+
+        /*get the client with the ID*/
+        return registeredClientRepository
+                .findRegisteredClientEntityByClientId(clientId)
+                .orElseThrow();
+    }
+
+    /**
      * Converts a RegisteredClientEntity object to a RegisteredClient object.
      *
      * @param entity The RegisteredClientEntity to convert.
@@ -84,6 +101,7 @@ public class RegisteredClientEntityManagementService implements RegisteredClient
                 .tokenSettings(entity.getTokenSettings())
                 .build();
     }
+
     @Override
     public void save(RegisteredClient registeredClient) {
 

@@ -16,3 +16,5 @@ spring:
     url: ${app.db.url}?currentSchema=${app.db.schema}
     username: ${app.db.user}
     password: ${app.db.password}
+springdoc:
+  show-oauth2-endpoints: true

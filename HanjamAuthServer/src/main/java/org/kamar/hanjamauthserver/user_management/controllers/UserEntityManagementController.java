@@ -74,13 +74,13 @@ public class UserEntityManagementController implements UserManagementContract {
     @PostMapping
     public void createUser(@Validated @RequestBody UserEntityDto userEntityDto) {
 
-        UserEntity userEntity = new UserEntity();
-        userEntity.setUsername(userEntityDto.username());
-        userEntity.setFirstname(userEntityDto.firstname());
-        userEntity.setLastname(userEntityDto.lastname());
-        userEntity.setEmail(userEntityDto.email());
-        userEntity.setPhoneNumber(userEntityDto.phoneNumber());
-        userEntity.setPassword(userEntityDto.password());
+        UserEntity userEntity = UserEntity.builder().username(userEntityDto.username())
+                .firstname(userEntityDto.firstname())
+                .lastname(userEntityDto.lastname())
+                .email(userEntityDto.email())
+                .phoneNumber(userEntityDto.phoneNumber())
+                .password(userEntityDto.password())
+                .build();
 
         userDetailsManager.createUser(userEntity);
     }

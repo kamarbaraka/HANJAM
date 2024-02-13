@@ -45,6 +45,7 @@ public class UserEntityManagementService implements UserDetailsManager {
     createUser(UserDetails user) {
         /*persist the user*/
         UserEntity userEntity = (UserEntity) user;
+
         userEntity.setPassword(passwordEncoder.encode(userEntity.getPassword()));
         userEntity.setEnabled(true);
         userRepository.save(userEntity);

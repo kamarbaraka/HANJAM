@@ -4,7 +4,7 @@ package org.kamar.hanjamauthserver.global_configuration;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.hateoas.config.EnableHypermediaSupport;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -34,6 +34,7 @@ public class GlobalUserManagementConfiguration {
      * @throws Exception if an error occurs during configuration
      */
     @Bean
+    @Order(2)
     public SecurityFilterChain userManagementFilterChain(HttpSecurity httpSecurity) throws Exception{
 
         /*enable form login*/

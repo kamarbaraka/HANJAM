@@ -25,9 +25,7 @@ public record RegisteredClientEntityDto(
         @NotEmpty(message = "post logout redirect uri cannot be empty.")
         @NotBlank(message = "post logout redirect uri cannot be blank.")
         String postLogoutRedirectUri,
-        @NotNull(message = "scope cannot be null.")
-        @NotEmpty(message = "scope cannot be empty.")
-        @NotBlank(message = "scope cannot be blank.")
+
         Set<String> scopes
 ) implements Serializable {
 }
